@@ -17,6 +17,9 @@ public class GameOfCraps {
         num_games_to_play = promptForNumGames();
         for(int i = 1; i <= num_games_to_play; i++){
 
+            System.out.println("\nRound " + i);
+            System.out.println("-----------------");
+
             // HUMAN'S ROUND
             wager = getHumansWager(MAX_WAGER);
             dice = new Dice();
@@ -77,12 +80,12 @@ public class GameOfCraps {
     }
 
     public static void endGame(int humanWinnings, int compWinnings){
-        if(humanWinnings < 0 && compWinnings < 0)
-            System.out.println("Were both broke...good thing computers don't need money");
+        if(humanWinnings <= 0 && compWinnings <= 0)
+            System.out.println("\nWere both broke...good thing computers don't need money");
         else if(humanWinnings > compWinnings)
-            System.out.println("You have beaten the machine");
+            System.out.println("\nYou have beaten the machine");
         else
-            System.out.println("SkyNet activated....");
+            System.out.println("\nSkyNet activated....");
 
     }
 
